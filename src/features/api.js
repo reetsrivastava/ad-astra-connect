@@ -1,0 +1,1 @@
+export const BACKEND = 'https://social-backend.reetrs.repl.co/api'
