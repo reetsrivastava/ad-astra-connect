@@ -13,6 +13,8 @@ export const Login = () => {
 		email: '',
 		password: '',
 	});
+	
+	const [isLoading, setLoading] = useState(false);
 
 	const { error } = useSelector((state) => state.currentUser);
 	const dispatch = useDispatch();
@@ -75,7 +77,7 @@ export const Login = () => {
 					<button
 						className='bg-gray-700 hover:bg-gray-900 p-2 md:w-9/12 w-full text-white font-semibold mb-2'
 						type='submit'>
-						LOGIN
+							{ isLoading ? "Processing..." : "LOGIN" }
 					</button>
 					<div className='font-medium text-md hover:bg-gray-200 p-2'>
 						Not a member?{' '}
