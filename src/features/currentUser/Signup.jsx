@@ -20,6 +20,8 @@ export const SignUp = () => {
 		email: '',
 		password: '',
 	});
+	
+	const [isLoading, setLoading] = useState(false);
 
 	const dispatch = useDispatch();
 	const { error } = useSelector((state) => state.currentUser);
@@ -134,7 +136,7 @@ export const SignUp = () => {
 						className='bg-gray-700 hover:bg-gray-900 p-2 md:w-9/12 w-full text-white font-semibold mb-2'
 						type='submit'
 						onClick={(e) => onSignUpClicked(e)}>
-						SIGNUP
+							{ isLoading ? "Processing..." : "SIGNUP" }
 					</button>
 					<div className='font-medium text-md p-2 hover:bg-gray-200'>
 						Already a member?{' '}
